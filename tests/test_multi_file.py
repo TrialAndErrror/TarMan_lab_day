@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from src.compress import compress_one_file, compress_multiple_files
+from src.compress import compress_multiple_files
 from src.decompress import decompress
 
 

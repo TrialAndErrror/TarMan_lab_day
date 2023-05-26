@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from src.compress import compress_one_file
+from src.compress import compress_multiple_files
 from src.decompress import decompress
 
 
@@ -27,7 +27,7 @@ def test_compress_and_decompress(input_file, output_tarball):
 
     destination_file = output_dir / "output.tar.gz"
     # Compress the input file into the tarball
-    compress_one_file(input_file, destination_file)
+    compress_multiple_files(destination_file, [input_file, ])
 
     # Ensure the tarball exists
     assert destination_file.exists()
