@@ -36,7 +36,7 @@ def test_compress_and_decompress(input_file, output_tarball):
     output_file_dir = output_tarball.cwd() / output_tarball.stem
     output_file_dir.mkdir(exist_ok=True, parents=True)
 
-    decompress(destination_file, output_file_dir)
+    decompress(output_file_dir, destination_file)
 
     # Ensure the output file exists
     output_file = output_file_dir / 'input.txt'
@@ -49,9 +49,13 @@ def test_compress_and_decompress(input_file, output_tarball):
     # Clean up temporary files
     output_file.unlink()
     destination_file.unlink()
+
+
     output_file_dir.rmdir()
+    output_dir.rmdir()
 
     # Ensure the temporary files are deleted
     assert not output_file.exists()
     assert not output_tarball.exists()
     assert not output_file_dir.exists()
+    assert not output_dir.exists()

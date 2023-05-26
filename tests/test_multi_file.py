@@ -37,7 +37,7 @@ def test_compress_and_decompress(input_files, output_tarball):
     output_file_dir = output_tarball.cwd() / output_tarball.stem
     output_file_dir.mkdir(exist_ok=True, parents=True)
 
-    decompress(destination_file, output_file_dir)
+    decompress(output_file_dir, destination_file)
 
     # Ensure the output file exists
     for num in range(10):
