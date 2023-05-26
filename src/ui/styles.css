@@ -1,0 +1,14 @@
+Vertical {
+    align: center middle;
+    padding: 2 2;
+}
+
+Button {
+    width: 50%;
+    align: center middle;
+}
+
+DirectoryTree {
+    width: 75%;
+    margin: 2 2;
+}
